@@ -18,4 +18,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./client  # Path to the client folder that contains your index.html
+          publish_dir: ./Client  # Path to the client folder that contains your index.html

@@ -1,0 +1,365 @@
+[
+    {
+      "name": "Naruto Uzumaki",
+      "description": "A young ninja who seeks recognition",
+      "abilities": "Shadow Clone Jutsu",
+      "rival": "Sasuke Uchiha",
+      "friends": "Sakura Haruno",
+      "backstory": "Orphaned at birth...",
+      "personality": "Loyal, Brave",
+      "anime": "Naruto"
+    },
+    {
+      "name": "Sasuke Uchiha",
+      "description": "Last member of the Uchiha clan",
+      "abilities": "Sharingan, Chidori",
+      "rival": "Naruto Uzumaki",
+      "friends": "Naruto, Sakura",
+      "backstory": "Seeking revenge against his brother...",
+      "personality": "Serious, Vengeful",
+      "anime": "Naruto"
+    },
+    {
+      "name": "Sakura Haruno",
+      "description": "Member of Team 7",
+      "abilities": "Medical Ninjutsu",
+      "rival": "Ino Yamanaka",
+      "friends": "Naruto, Sasuke",
+      "backstory": "Trained under Tsunade...",
+      "personality": "Caring, Determined",
+      "anime": "Naruto"
+    },
+    {
+      "name": "Goku",
+      "description": "A Saiyan raised on Earth",
+      "abilities": "Kamehameha, Super Saiyan",
+      "rival": "Vegeta",
+      "friends": "Krillin, Bulma",
+      "backstory": "Sent to Earth as a baby...",
+      "personality": "Cheerful, Determined",
+      "anime": "Dragon Ball Z"
+    },
+    {
+      "name": "Vegeta",
+      "description": "Prince of the Saiyan race",
+      "abilities": "Galick Gun, Super Saiyan",
+      "rival": "Goku",
+      "friends": "Bulma, Trunks",
+      "backstory": "Seeks to surpass Goku...",
+      "personality": "Prideful, Competitive",
+      "anime": "Dragon Ball Z"
+    },
+    {
+      "name": "Luffy D. Monkey",
+      "description": "Captain of the Straw Hat Pirates",
+      "abilities": "Gomu Gomu no Mi",
+      "rival": "Smoker",
+      "friends": "Zoro, Nami",
+      "backstory": "Wants to become the Pirate King...",
+      "personality": "Free-spirited, Adventurous",
+      "anime": "One Piece"
+    },
+    {
+      "name": "Zoro Roronoa",
+      "description": "A swordsman with a dream to be the best",
+      "abilities": "Three-Sword Style",
+      "rival": "Dracule Mihawk",
+      "friends": "Luffy, Nami",
+      "backstory": "Seeks to become the world's greatest swordsman...",
+      "personality": "Serious, Loyal",
+      "anime": "One Piece"
+    },
+    {
+      "name": "Nami",
+      "description": "Navigator of the Straw Hat Pirates",
+      "abilities": "Weather Manipulation",
+      "rival": "Arlong",
+      "friends": "Luffy, Zoro",
+      "backstory": "Wants to create a map of the entire world...",
+      "personality": "Smart, Resourceful",
+      "anime": "One Piece"
+    },
+    {
+      "name": "Ichigo Kurosaki",
+      "description": "Substitute Soul Reaper",
+      "abilities": "Getsuga Tenshou, Bankai",
+      "rival": "Ulquiorra Cifer",
+      "friends": "Rukia Kuchiki",
+      "backstory": "Gains Soul Reaper powers to protect his loved ones...",
+      "personality": "Brave, Protective",
+      "anime": "Bleach"
+    },
+    {
+      "name": "Rukia Kuchiki",
+      "description": "A Soul Reaper from a noble family",
+      "abilities": "Kidou, Swordsmanship",
+      "rival": "Hollows",
+      "friends": "Ichigo Kurosaki",
+      "backstory": "Gave her powers to Ichigo and trained him...",
+      "personality": "Calm, Strong-willed",
+      "anime": "Bleach"
+    },
+    {
+      "name": "Edward Elric",
+      "description": "State Alchemist known as the Fullmetal Alchemist",
+      "abilities": "Alchemy, Automail",
+      "rival": "Father",
+      "friends": "Alphonse Elric, Winry Rockbell",
+      "backstory": "Lost his arm and leg while trying to bring his mother back...",
+      "personality": "Determined, Stubborn",
+      "anime": "Fullmetal Alchemist"
+    },
+    {
+      "name": "Alphonse Elric",
+      "description": "Younger brother of Edward Elric",
+      "abilities": "Alchemy, Soul bound to armor",
+      "rival": "Homunculi",
+      "friends": "Edward Elric, Winry Rockbell",
+      "backstory": "Lost his body in a failed alchemy experiment...",
+      "personality": "Kind, Gentle",
+      "anime": "Fullmetal Alchemist"
+    },
+    {
+      "name": "Levi Ackerman",
+      "description": "Captain of the Survey Corps",
+      "abilities": "Expert Swordsman, ODM Gear",
+      "rival": "Zeke Yeager",
+      "friends": "Erwin Smith",
+      "backstory": "A skilled soldier who is feared by Titans...",
+      "personality": "Stoic, Strong",
+      "anime": "Attack on Titan"
+    },
+    {
+      "name": "Eren Yeager",
+      "description": "Member of the Survey Corps, Titan Shifter",
+      "abilities": "Titan Transformation",
+      "rival": "Reiner Braun",
+      "friends": "Mikasa Ackerman, Armin Arlert",
+      "backstory": "Swore to destroy all Titans after witnessing his mother's death...",
+      "personality": "Passionate, Determined",
+      "anime": "Attack on Titan"
+    },
+    {
+      "name": "Mikasa Ackerman",
+      "description": "Eren's adoptive sister and protector",
+      "abilities": "Expert Swordsman, ODM Gear",
+      "rival": "Annie Leonhart",
+      "friends": "Eren Yeager, Armin Arlert",
+      "backstory": "Devoted to protecting Eren...",
+      "personality": "Loyal, Strong",
+      "anime": "Attack on Titan"
+    },
+    {
+      "name": "Light Yagami",
+      "description": "Holder of the Death Note",
+      "abilities": "Genius intellect, Death Note",
+      "rival": "L",
+      "friends": "Misa Amane",
+      "backstory": "Discovers the Death Note and decides to become a god of the new world...",
+      "personality": "Ambitious, Ruthless",
+      "anime": "Death Note"
+    },
+    {
+      "name": "L Lawliet",
+      "description": "World's greatest detective",
+      "abilities": "Genius intellect, Analytical skills",
+      "rival": "Light Yagami",
+      "friends": "Watari",
+      "backstory": "Takes on the case of the mysterious deaths caused by Kira...",
+      "personality": "Quirky, Intelligent",
+      "anime": "Death Note"
+    },
+    {
+      "name": "Gon Freecss",
+      "description": "Hunter on a quest to find his father",
+      "abilities": "Nen, Enhanced senses",
+      "rival": "Hisoka",
+      "friends": "Killua Zoldyck",
+      "backstory": "Embarks on a journey to find his father...",
+      "personality": "Innocent, Determined",
+      "anime": "Hunter x Hunter"
+    },
+    {
+      "name": "Killua Zoldyck",
+      "description": "Former assassin from the Zoldyck family",
+      "abilities": "Nen, Lightning manipulation",
+      "rival": "Hisoka",
+      "friends": "Gon Freecss",
+      "backstory": "Runs away from his assassin family to live a normal life...",
+      "personality": "Sarcastic, Loyal",
+      "anime": "Hunter x Hunter"
+    },
+    {
+      "name": "Natsu Dragneel",
+      "description": "Fire Dragon Slayer from Fairy Tail",
+      "abilities": "Fire Dragon Slayer Magic",
+      "rival": "Gray Fullbuster",
+      "friends": "Lucy Heartfilia, Happy",
+      "backstory": "Raised by the dragon Igneel...",
+      "personality": "Hot-headed, Loyal",
+      "anime": "Fairy Tail"
+    },
+    {
+      "name": "Lucy Heartfilia",
+      "description": "Celestial Spirit Mage from Fairy Tail",
+      "abilities": "Celestial Spirit Magic",
+      "rival": "Aquarius (sometimes)",
+      "friends": "Natsu Dragneel, Gray Fullbuster",
+      "backstory": "Joins Fairy Tail to follow her dream of becoming a great mage...",
+      "personality": "Kind, Smart",
+      "anime": "Fairy Tail"
+    },
+    {
+      "name": "Rem",
+      "description": "Demon maid who works for Roswaal",
+      "abilities": "Demon Transformation, Water Magic",
+      "rival": "Ram (sister)",
+      "friends": "Subaru Natsuki",
+      "backstory": "Loyal maid with hidden feelings for Subaru...",
+      "personality": "Loyal, Strong-willed",
+      "anime": "Re:Zero"
+    },
+    {
+      "name": "Tanjiro Kamado",
+      "description": "Demon Slayer searching for a cure for his sister",
+      "abilities": "Water Breathing, Hinokami Kagura",
+      "rival": "Muzan Kibutsuji",
+      "friends": "Nezuko Kamado, Zenitsu Agatsuma",
+      "backstory": "Lost his family to demons and seeks revenge...",
+      "personality": "Kind, Brave",
+      "anime": "Demon Slayer"
+    },
+    {
+      "name": "Nezuko Kamado",
+      "description": "Tanjiro's sister turned into a demon",
+      "abilities": "Demon powers, Regeneration",
+      "rival": "Demon Slayers",
+      "friends": "Tanjiro Kamado",
+      "backstory": "Fights her demonic urges to protect her brother...",
+      "personality": "Quiet, Fierce",
+      "anime": "Demon Slayer"
+    },
+    {
+      "name": "Zenitsu Agatsuma",
+      "description": "Demon Slayer with a fear of fighting",
+      "abilities": "Thunder Breathing",
+      "rival": "Demons",
+      "friends": "Tanjiro Kamado, Inosuke Hashibira",
+      "backstory": "Despite his fear, he becomes a strong fighter while unconscious...",
+      "personality": "Cowardly, Loyal",
+      "anime": "Demon Slayer"
+    },
+    {
+      "name": "Inosuke Hashibira",
+      "description": "Demon Slayer raised by boars",
+      "abilities": "Beast Breathing",
+      "rival": "Zenitsu Agatsuma",
+      "friends": "Tanjiro Kamado",
+      "backstory": "Grew up in the mountains and learned to fight on his own...",
+      "personality": "Aggressive, Strong",
+      "anime": "Demon Slayer"
+    },
+    {
+          "name": "Tsuna Sawada",
+          "description": "A timid and clumsy middle schooler who becomes the Vongola Mafia boss",
+          "abilities": "Dying Will Flame, X-Burner",
+          "rival": "Mukuro Rokudo",
+          "friends": "Reborn, Gokudera Hayato",
+          "backstory": "Reluctantly trained by Reborn to become the 10th boss of the Vongola family...",
+          "personality": "Kind, Reluctant Leader",
+          "anime": "Reborn!"
+        },
+        {
+          "name": "Reborn",
+          "description": "An Arcobaleno and world-class hitman, Tsuna's tutor",
+          "abilities": "Dying Will Bullet, Combat Skills",
+          "rival": "Colonnello",
+          "friends": "Tsuna Sawada",
+          "backstory": "Assigned to train Tsuna to become a worthy Vongola boss...",
+          "personality": "Strict, Wise",
+          "anime": "Reborn!"
+        },
+        {
+          "name": "Gokudera Hayato",
+          "description": "Tsuna's loyal right-hand man and expert in explosives",
+          "abilities": "Dynamite Techniques, Storm Flame",
+          "rival": "Yamamoto Takeshi",
+          "friends": "Tsuna Sawada, Yamamoto Takeshi",
+          "backstory": "Joins Tsuna's family as his right-hand man...",
+          "personality": "Loyal, Hot-headed",
+          "anime": "Reborn!"
+        },
+        {
+          "name": "Yamamoto Takeshi",
+          "description": "A laid-back baseball player who becomes a skilled swordsman",
+          "abilities": "Shigure Soen Ryu, Rain Flame",
+          "rival": "Gokudera Hayato",
+          "friends": "Tsuna Sawada, Gokudera Hayato",
+          "backstory": "Initially sees the mafia world as a game but becomes one of Tsuna's closest allies...",
+          "personality": "Easy-going, Brave",
+          "anime": "Reborn!"
+        },
+        {
+          "name": "Ryohei Sasagawa",
+          "description": "Tsuna's passionate friend and leader of the boxing club",
+          "abilities": "Maximum Cannon, Sun Flame",
+          "rival": "Kyouya Hibari",
+          "friends": "Tsuna Sawada, Yamamoto Takeshi",
+          "backstory": "A hot-blooded fighter who seeks to take everything to the extreme...",
+          "personality": "Energetic, Passionate",
+          "anime": "Reborn!"
+        },
+        {
+          "name": "Kyouya Hibari",
+          "description": "Leader of the Namimori Disciplinary Committee and a powerful fighter",
+          "abilities": "Tonfa Techniques, Cloud Flame",
+          "rival": "Mukuro Rokudo",
+          "friends": "Tsuna Sawada (reluctantly)",
+          "backstory": "Prefers to work alone but acknowledges Tsuna's leadership...",
+          "personality": "Prideful, Strong",
+          "anime": "Reborn!"
+        },
+        {
+          "name": "Mukuro Rokudo",
+          "description": "A powerful illusionist who opposes the Mafia",
+          "abilities": "Illusions, Mist Flame",
+          "rival": "Tsuna Sawada",
+          "friends": "Chrome Dokuro",
+          "backstory": "A former enemy of Tsuna who becomes a reluctant ally...",
+          "personality": "Mysterious, Ambitious",
+          "anime": "Reborn!"
+        },
+        {
+          "name": "Chrome Dokuro",
+          "description": "Mukuro's vessel and a loyal Mist Guardian",
+          "abilities": "Illusions, Mist Flame",
+          "rival": "N/A",
+          "friends": "Mukuro Rokudo, Tsuna Sawada",
+          "backstory": "Saved by Mukuro and becomes his vessel and ally...",
+          "personality": "Shy, Loyal",
+          "anime": "Reborn!"
+        },
+        {
+          "name": "Lambo",
+          "description": "A young and cowardly hitman from the Bovino family",
+          "abilities": "Grenades, Lightning Flame",
+          "rival": "I-Pin",
+          "friends": "Tsuna Sawada, I-Pin",
+          "backstory": "Wants to defeat Reborn but is often more of a nuisance...",
+          "personality": "Cowardly, Childish",
+          "anime": "Reborn!"
+        },
+        {
+          "name": "I-Pin",
+          "description": "A young assassin skilled in martial arts",
+          "abilities": "Pinzu Time Bomb, Martial Arts",
+          "rival": "Lambo",
+          "friends": "Tsuna Sawada, Lambo",
+          "backstory": "An assassin who is close friends with Lambo and Tsuna's group...",
+          "personality": "Shy, Focused",
+          "anime": "Reborn!"
+        }
+      
+      
+  ]
+  

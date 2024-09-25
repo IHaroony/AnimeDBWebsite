@@ -60,7 +60,7 @@ body {
 
 /* Parallax section */
 .parallax {
-    background-image: url('./Images/Uchiha.jpg');
+    background-image: url('./images/Uchiha.jpg');
     height: 600px;
     background-attachment: fixed;
     background-position: center;

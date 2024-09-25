@@ -3,19 +3,19 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Or the default branch of your repository
+      - main  # Or your default branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Copy everything from the client folder to the root of the gh-pages branch
+      # Ensure you're using the correct permissions to deploy
       - name: Deploy client folder to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./client  # Path to your client folder that contains index.html
+          publish_dir: ./client  # Path to the client folder that contains your index.html

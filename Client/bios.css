@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #ffffff;
-    background-image: url('images/wkon1.jpg');
+    background-image: url('./Images/wkon1.jpg');
     background-repeat: repeat; /* This will repeat the image */
     background-size: 900px 600px; /* Adjust the size of the background image */
 }

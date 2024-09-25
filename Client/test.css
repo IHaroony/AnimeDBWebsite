@@ -8,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #ffffff;
-    background-image: url('./images/5604744.png');
+    background-image: url('./Images/5604744.png');
 }
 
 /* Navigation styles */
@@ -60,7 +60,7 @@ body {
 
 /* Parallax section */
 .parallax {
-    background-image: url('./images/Uchiha.jpg');
+    background-image: url('./Images/Uchiha.jpg');
     height: 600px;
     background-attachment: fixed;
     background-position: center;

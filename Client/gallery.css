@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #ffffff;
-    background-image: url('images/aluffy.png');
+    background-image: url('./Images/aluffy.png');
     background-size: cover; /* Ensures the image covers the entire background */
     height: 30vh; /* Sets the body height to the full viewport height */
     width: 100vw; /* Sets the body width to the full viewport width */

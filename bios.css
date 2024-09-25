@@ -1,0 +1,172 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-image: url('images/wkon1.jpg');
+    background-repeat: repeat; /* This will repeat the image */
+    background-size: 900px 600px; /* Adjust the size of the background image */
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    background-color: #7dc086d8;
+    color: hsl(0, 0%, 100%);
+}
+
+.nav .logo {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: fantasy;
+}
+
+.nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav .nav-links li {
+    margin: 0 20px;
+}
+
+.nav .nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: color 0.5s ease, background-color 0.5s ease;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+
+}
+
+.nav .nav-links a i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.nav .nav-links a:hover {
+    color: #2f462f;
+    background-color: rgb(252, 227, 191);
+    border-radius: 30px;
+    
+}
+
+
+
+
+h5 {
+    font-size: 35px;
+    margin-top: 200px;
+    margin-left: 300px;
+    padding: 15px; /* Add padding inside the border */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #9bd38f; /* White background */
+    border: 6px solid #8acc7c; /* Solid border with the same color as the text */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+    display: inline-block; /* Ensure the box wraps tightly around the text */
+}
+
+/* Search Bar */
+.search-section {
+    text-align: center;
+    margin: 67px 0;
+}
+
+#search-bar {
+    padding: 15px;
+    width: 45%;
+    font-size: 18px;
+    border: 3px solid #000000;
+    border-radius: 20px;
+}
+
+
+
+
+
+/* Initial card styling (before expanding) */
+.character-card {
+    background-color: rgb(248, 212, 162);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 3px solid #000000;
+    width: 500px;
+    max-height: 80px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    margin: 20px auto;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    transform: scale(0.9); /* Initial scale for "pop-in" effect */
+    opacity: 0; /* Initially hidden */
+}
+
+/* Animate card "pop-in" effect */
+.character-card.animate-in {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+}
+
+/* Styling for the expanded card */
+.character-card.expanded {
+    max-height: 900px;
+    width: 900px; /* Make the card wider when expanded */
+    padding: 100px;
+    transition: all 0.9s ease;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the character's name */
+.character-info h2 {
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0), -3px -3px 3px black;
+    margin-bottom: 10px;
+    transition: all 0.9s ease; /* Smooth transition for text */
+}
+
+/* Text size increase on expansion */
+.character-card.expanded .character-info h2 {
+    font-size: 32px; /* Increase the font size */
+    transform: scale(1.2); /* Slightly scale the text for a bolder look */
+}
+
+/* Hidden details (expanded when clicked) */
+.character-content {
+    font-size: 16px;
+    color: #000;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0; /* Hidden initially */
+    transform: translateY(-30px); /* Start content slightly above */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Make details visible when expanded */
+.character-card.expanded .character-content {
+    opacity: 1; /* Fade in the details */
+    transform: translateY(0); /* Slide the content into place */
+    font-size: 23px; /* Increase text size */
+}
+
+/* Additional hover effect */
+.character-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger hover effect */
+}

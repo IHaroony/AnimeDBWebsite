@@ -7,7 +7,8 @@ const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME // This assumes the database already exists
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT // This assumes the database already exists
 });
 
 // Function to initialize the database, create the tables, and insert data

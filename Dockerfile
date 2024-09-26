@@ -5,17 +5,14 @@ FROM node:14-alpine
 WORKDIR /app
 
 # Copy the Backend folder contents into the /app directory in the container
-COPY ./Backend .
-
-# Copy wait-for-it script to the container
-COPY ./scripts/wait-for-it.sh /usr/bin/wait-for-it.sh
-RUN chmod +x /usr/bin/wait-for-it.sh
-
-# Install dependencies inside the container
+COPY ./Backend/package*.json ./
 RUN npm install
+
+# Now copy the rest of the app files (minimize copy operations for faster builds)
+COPY ./Backend .
 
 # Expose the port the app will run on
 EXPOSE 3000
 
-# Command to start the app and run dbsetup only after MySQL is ready
-CMD ["sh", "-c", "/usr/bin/wait-for-it.sh ${MYSQLHOST}:${MYSQLPORT} --timeout=30 --strict -- npm run dbsetup && npm start"]
+# Command to start the app and run dbsetup at runtime, ensuring the database is ready
+CMD ["sh", "-c", "npm run dbsetup && npm start"]

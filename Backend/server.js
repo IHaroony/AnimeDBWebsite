@@ -1,7 +1,6 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-require('dotenv').config();
 
 // Create an Express app
 const app = express();
@@ -10,12 +9,13 @@ const port = process.env.PORT || 3000;
 // Use CORS
 app.use(cors());
 
-// Create a MySQL connection
+// Create a MySQL connection using Railway's provided environment variables
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME 
+  host: process.env.MYSQLHOST || 'localhost',
+  user: process.env.MYSQLUSER || 'root',
+  password: process.env.MYSQLPASSWORD || '',
+  database: process.env.MYSQLDATABASE || 'mydatabase',
+  port: process.env.MYSQLPORT || 3306
 });
 
 // Connect to MySQL
@@ -40,7 +40,7 @@ app.get('/characters', (req, res) => {
   });
 });
 
-// Listen on port 3000
+// Listen on port
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

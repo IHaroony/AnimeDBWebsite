@@ -10,11 +10,8 @@ COPY ./Backend .
 # Install dependencies inside the container
 RUN npm install
 
-# Run the database setup command (adjust as needed for your setup)
-RUN npm run dbsetup
-
-# Expose the port the app will run on (adjust this if your app uses a different port)
+# Expose the port the app will run on
 EXPOSE 3000
 
-# Command to start the app
-CMD ["npm", "start"]
+# Command to start the app and run dbsetup at runtime, ensuring the database is ready
+CMD ["sh", "-c", "npm run dbsetup && npm start"]

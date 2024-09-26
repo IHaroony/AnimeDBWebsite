@@ -1,13 +1,14 @@
 const mysql = require('mysql2');
 const fs = require('fs');
+require('dotenv').config(); // Load environment variables from .env file
 
-// Create a MySQL connection using Railway's provided environment variables
+// Create a MySQL connection using the .env variables
 const connection = mysql.createConnection({
-  host: process.env.MYSQLHOST,          // Railway-provided variable for MySQL host
-  user: process.env.MYSQLUSER,          // Railway-provided variable for MySQL user
-  password: process.env.MYSQLPASSWORD,  // Railway-provided variable for MySQL password
-  database: process.env.MYSQLDATABASE,  // Railway-provided variable for MySQL database name
-  port: process.env.MYSQLPORT || 3306   // Railway-provided variable for MySQL port (with fallback)
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT // This assumes the database already exists
 });
 
 // Function to initialize the database, create the tables, and insert data
@@ -56,36 +57,20 @@ const initializeDatabase = () => {
             return;
           }
 
-          let characters;
-          try {
-            characters = JSON.parse(data); // Parse JSON data
-          } catch (jsonErr) {
-            console.error('Error parsing anime.json:', jsonErr);
-            connection.end();
-            return;
-          }
-
+          const characters = JSON.parse(data); // Parse JSON data
+          
           // Build insert values from the parsed JSON
           const insertValues = characters.map(character => {
-            return connection.escape([
-              character.name,
-              character.description,
-              character.abilities,
-              character.rivalries,
-              character.friends,
-              character.backstory,
-              character.personality_traits,
-              character.anime
-            ]);
-          });
+            return `('${character.name}', '${character.description}', '${character.abilities}', '${character.rival}', '${character.friends}', '${character.backstory}', '${character.personality}', '${character.anime}')`;
+          }).join(', ');
 
           // Build the SQL insert query
           const insertDataQuery = `
-            INSERT INTO characters (name, description, abilities, rivalries, friends, backstory, personality_traits, anime)
-            VALUES ?
+            INSERT INTO characters (name, description, abilities, rivalries, friends, backstory, personality_traits, anime) VALUES
+            ${insertValues};
           `;
 
-          connection.query(insertDataQuery, [insertValues], (err) => {
+          connection.query(insertDataQuery, (err) => {
             if (err) {
               console.error('Error inserting data:', err);
             } else {

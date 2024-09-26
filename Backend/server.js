@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+require('dotenv').config();
 
 // Create an Express app
 const app = express();
@@ -9,39 +10,22 @@ const port = process.env.PORT || 3000;
 // Use CORS
 app.use(cors());
 
-// Create a MySQL connection using Railway's provided environment variables
+// Create a MySQL connection
 const connection = mysql.createConnection({
-  host: process.env.MYSQLHOST || 'localhost',   // Use Railway's provided host or fallback to localhost
-  user: process.env.MYSQLUSER || 'root',        // Use Railway's provided user or fallback to root
-  password: process.env.MYSQLPASSWORD || '',    // Use Railway's provided password or empty string for local dev
-  database: process.env.MYSQLDATABASE || 'mydatabase',  // Use Railway's provided DB name or default for local dev
-  port: process.env.MYSQLPORT || 3306           // Use Railway's provided port or fallback to 3306
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME 
 });
 
-// Function to handle MySQL connection
-const handleDisconnect = () => {
-  connection.connect((err) => {
-    if (err) {
-      console.error('Error connecting to MySQL:', err);
-      setTimeout(handleDisconnect, 2000); // Retry after 2 seconds
-    } else {
-      console.log('Connected to MySQL');
-    }
-  });
-
-  connection.on('error', (err) => {
-    console.error('MySQL error', err);
-    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-      console.log('MySQL connection lost, reconnecting...');
-      handleDisconnect();  // Reconnect if connection is lost
-    } else {
-      throw err;
-    }
-  });
-};
-
-// Initialize MySQL connection
-handleDisconnect();
+// Connect to MySQL
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to MySQL:', err);
+    return;
+  }
+  console.log('Connected to MySQL');
+});
 
 // Define a route to fetch data from the MySQL database
 app.get('/characters', (req, res) => {
@@ -56,7 +40,7 @@ app.get('/characters', (req, res) => {
   });
 });
 
-// Listen on the specified port
+// Listen on port 3000
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

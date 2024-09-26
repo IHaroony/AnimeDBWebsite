@@ -1,20 +1,20 @@
-# Use the official Node.js image from DockerHub
+# Use Node.js 14 from Alpine as the base image
 FROM node:14-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Backend folder contents into the /app directory in the container
-COPY ./Backend .
+# Copy package.json and package-lock.json into the container
+COPY ./Backend/package*.json ./
 
-# Install dependencies inside the container
+# Install the dependencies
 RUN npm install
 
-# Run the database setup command (adjust as needed for your setup)
-RUN npm run dbsetup
+# Copy the remaining application files
+COPY ./Backend .
 
-# Expose the port the app will run on (adjust this if your app uses a different port)
+# Expose the port that your app will use
 EXPOSE 3000
 
-# Command to start the app
+# Run the app directly (only for starting the app, no dbsetup for now)
 CMD ["npm", "start"]

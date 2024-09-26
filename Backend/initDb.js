@@ -1,14 +1,13 @@
 const mysql = require('mysql2');
 const fs = require('fs');
-require('dotenv').config(); // Load environment variables from .env file
 
-// Create a MySQL connection using the .env variables
+// Create a MySQL connection using Railway's provided environment variables
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT // This assumes the database already exists
+  host: process.env.MYSQLHOST,          // Railway-provided variable for MySQL host
+  user: process.env.MYSQLUSER,          // Railway-provided variable for MySQL user
+  password: process.env.MYSQLPASSWORD,  // Railway-provided variable for MySQL password
+  database: process.env.MYSQLDATABASE,  // Railway-provided variable for MySQL database name
+  port: process.env.MYSQLPORT           // Railway-provided variable for MySQL port (typically 3306)
 });
 
 // Function to initialize the database, create the tables, and insert data

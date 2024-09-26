@@ -5,7 +5,7 @@ commands = ["cd Backend && npm install && npm run dbsetup"]
 commands = []
 
 [phases.start]
-commands = ["cd Backend && npm start"]
+commands = ["cd Backend && node server.js"]
 
 [stack]
 runtime = "nodejs"

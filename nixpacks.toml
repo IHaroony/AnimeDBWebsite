@@ -6,3 +6,6 @@ commands = []
 
 [phases.start]
 commands = ["cd Backend && npm start"]
+
+[stack]
+runtime = "nodejs"

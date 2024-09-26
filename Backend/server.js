@@ -11,21 +11,37 @@ app.use(cors());
 
 // Create a MySQL connection using Railway's provided environment variables
 const connection = mysql.createConnection({
-  host: process.env.MYSQLHOST || 'localhost',
-  user: process.env.MYSQLUSER || 'root',
-  password: process.env.MYSQLPASSWORD || '',
-  database: process.env.MYSQLDATABASE || 'mydatabase',
-  port: process.env.MYSQLPORT || 3306
+  host: process.env.MYSQLHOST || 'localhost',   // Use Railway's provided host or fallback to localhost
+  user: process.env.MYSQLUSER || 'root',        // Use Railway's provided user or fallback to root
+  password: process.env.MYSQLPASSWORD || '',    // Use Railway's provided password or empty string for local dev
+  database: process.env.MYSQLDATABASE || 'mydatabase',  // Use Railway's provided DB name or default for local dev
+  port: process.env.MYSQLPORT || 3306           // Use Railway's provided port or fallback to 3306
 });
 
-// Connect to MySQL
-connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to MySQL:', err);
-    return;
-  }
-  console.log('Connected to MySQL');
-});
+// Function to handle MySQL connection
+const handleDisconnect = () => {
+  connection.connect((err) => {
+    if (err) {
+      console.error('Error connecting to MySQL:', err);
+      setTimeout(handleDisconnect, 2000); // Retry after 2 seconds
+    } else {
+      console.log('Connected to MySQL');
+    }
+  });
+
+  connection.on('error', (err) => {
+    console.error('MySQL error', err);
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+      console.log('MySQL connection lost, reconnecting...');
+      handleDisconnect();  // Reconnect if connection is lost
+    } else {
+      throw err;
+    }
+  });
+};
+
+// Initialize MySQL connection
+handleDisconnect();
 
 // Define a route to fetch data from the MySQL database
 app.get('/characters', (req, res) => {
@@ -40,7 +56,7 @@ app.get('/characters', (req, res) => {
   });
 });
 
-// Listen on port
+// Listen on the specified port
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

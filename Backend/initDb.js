@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
   user: process.env.MYSQLUSER,          // Railway-provided variable for MySQL user
   password: process.env.MYSQLPASSWORD,  // Railway-provided variable for MySQL password
   database: process.env.MYSQLDATABASE,  // Railway-provided variable for MySQL database name
-  port: process.env.MYSQLPORT           // Railway-provided variable for MySQL port (typically 3306)
+  port: process.env.MYSQLPORT || 3306   // Railway-provided variable for MySQL port (with fallback)
 });
 
 // Function to initialize the database, create the tables, and insert data
@@ -56,20 +56,36 @@ const initializeDatabase = () => {
             return;
           }
 
-          const characters = JSON.parse(data); // Parse JSON data
-          
+          let characters;
+          try {
+            characters = JSON.parse(data); // Parse JSON data
+          } catch (jsonErr) {
+            console.error('Error parsing anime.json:', jsonErr);
+            connection.end();
+            return;
+          }
+
           // Build insert values from the parsed JSON
           const insertValues = characters.map(character => {
-            return `('${character.name}', '${character.description}', '${character.abilities}', '${character.rival}', '${character.friends}', '${character.backstory}', '${character.personality}', '${character.anime}')`;
-          }).join(', ');
+            return connection.escape([
+              character.name,
+              character.description,
+              character.abilities,
+              character.rivalries,
+              character.friends,
+              character.backstory,
+              character.personality_traits,
+              character.anime
+            ]);
+          });
 
           // Build the SQL insert query
           const insertDataQuery = `
-            INSERT INTO characters (name, description, abilities, rivalries, friends, backstory, personality_traits, anime) VALUES
-            ${insertValues};
+            INSERT INTO characters (name, description, abilities, rivalries, friends, backstory, personality_traits, anime)
+            VALUES ?
           `;
 
-          connection.query(insertDataQuery, (err) => {
+          connection.query(insertDataQuery, [insertValues], (err) => {
             if (err) {
               console.error('Error inserting data:', err);
             } else {
